@@ -3,9 +3,9 @@ def solution(cards1, cards2, goal):
     cards2.append("")
     for elem in goal:
         if cards1[0] == elem:
-            del cards1[0]
+            cards1.pop(0)
         elif cards2[0] == elem:
-            del cards2[0]
+            cards2.pop(0)
         else:
             return "No"            
     return "Yes"
