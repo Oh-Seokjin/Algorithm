@@ -9,18 +9,8 @@ def move(x, y, d):
     while True:
         nx, ny = x+dxs[d], y+dys[d]
 
-        # if in_range(x, y):
-        #     if 5 in visited[x][y]:
-        #         cnt = -1
-        #         break
-        # else:
-        #     if 5 in visited[nx][ny]:
-        #         cnt = -1
-        #         break
-
         if not in_range(nx, ny):
             d = five[d]
-            # visited[x][y][d] += 1
             x, y = nx, ny
             cnt += 1
             continue
@@ -50,7 +40,6 @@ def move(x, y, d):
 
         if (nx, ny) == (sx, sy):
             break
-        # visited[nx][ny][d] += 1
         x, y = nx, ny
 
     return cnt
@@ -85,7 +74,6 @@ for test_case in range(1, T+1):
         for y in range(n):
             if board[x][y] == 0:
                 for d in range(4):
-                    # visited = [[[0, 0, 0, 0] for _ in range(n)] for _ in range(n)]
                     answer = max(answer, move(x, y, d))
 
     print(f"#{test_case} {answer}")
